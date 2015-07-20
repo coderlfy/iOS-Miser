@@ -9,11 +9,50 @@
 /* Begin PBXBuildFile section */
 		0054811E1B4EBE8F004159AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0054811D1B4EBE8F004159AE /* main.m */; };
 		005481211B4EBE8F004159AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 005481201B4EBE8F004159AE /* AppDelegate.m */; };
-		005481241B4EBE8F004159AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005481231B4EBE8F004159AE /* ViewController.m */; };
-		005481271B4EBE8F004159AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 005481251B4EBE8F004159AE /* Main.storyboard */; };
+		005481241B4EBE8F004159AE /* EditConsumptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005481231B4EBE8F004159AE /* EditConsumptionController.m */; };
 		005481291B4EBE8F004159AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 005481281B4EBE8F004159AE /* Images.xcassets */; };
 		0054812C1B4EBE8F004159AE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0054812A1B4EBE8F004159AE /* LaunchScreen.xib */; };
 		005481381B4EBE8F004159AE /* IosMiserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 005481371B4EBE8F004159AE /* IosMiserTests.m */; };
+		0073A7CC1B500D8E008CD842 /* RETableViewBoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7991B500D8E008CD842 /* RETableViewBoolCell.m */; };
+		0073A7CD1B500D8E008CD842 /* RETableViewCreditCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A79B1B500D8E008CD842 /* RETableViewCreditCardCell.m */; };
+		0073A7CE1B500D8E008CD842 /* RETableViewDateTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A79D1B500D8E008CD842 /* RETableViewDateTimeCell.m */; };
+		0073A7CF1B500D8E008CD842 /* RETableViewFloatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A79F1B500D8E008CD842 /* RETableViewFloatCell.m */; };
+		0073A7D01B500D8E008CD842 /* RETableViewLongTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7A11B500D8E008CD842 /* RETableViewLongTextCell.m */; };
+		0073A7D11B500D8E008CD842 /* RETableViewNumberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7A31B500D8E008CD842 /* RETableViewNumberCell.m */; };
+		0073A7D21B500D8E008CD842 /* RETableViewOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7A51B500D8E008CD842 /* RETableViewOptionCell.m */; };
+		0073A7D31B500D8E008CD842 /* RETableViewTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7A71B500D8E008CD842 /* RETableViewTextCell.m */; };
+		0073A7D41B500D8E008CD842 /* REBoolItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7AA1B500D8E008CD842 /* REBoolItem.m */; };
+		0073A7D51B500D8E008CD842 /* RECreditCardItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7AC1B500D8E008CD842 /* RECreditCardItem.m */; };
+		0073A7D61B500D8E008CD842 /* REDateTimeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7AE1B500D8E008CD842 /* REDateTimeItem.m */; };
+		0073A7D71B500D8E008CD842 /* REFloatItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7B01B500D8E008CD842 /* REFloatItem.m */; };
+		0073A7D81B500D8E008CD842 /* RELongTextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7B21B500D8E008CD842 /* RELongTextItem.m */; };
+		0073A7D91B500D8E008CD842 /* REMultipleChoiceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7B41B500D8E008CD842 /* REMultipleChoiceItem.m */; };
+		0073A7DA1B500D8E008CD842 /* RENumberItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7B61B500D8E008CD842 /* RENumberItem.m */; };
+		0073A7DB1B500D8E008CD842 /* RERadioItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7B81B500D8E008CD842 /* RERadioItem.m */; };
+		0073A7DC1B500D8E008CD842 /* RETextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7BA1B500D8E008CD842 /* RETextItem.m */; };
+		0073A7DD1B500D8E008CD842 /* REActionBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7BC1B500D8E008CD842 /* REActionBar.m */; };
+		0073A7DE1B500D8E008CD842 /* REPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7BE1B500D8E008CD842 /* REPlaceholderTextView.m */; };
+		0073A7DF1B500D8E008CD842 /* RETableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7C01B500D8E008CD842 /* RETableViewCell.m */; };
+		0073A7E01B500D8E008CD842 /* RETableViewCellStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7C21B500D8E008CD842 /* RETableViewCellStyle.m */; };
+		0073A7E11B500D8E008CD842 /* RETableViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7C41B500D8E008CD842 /* RETableViewItem.m */; };
+		0073A7E21B500D8E008CD842 /* RETableViewManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0073A7C51B500D8E008CD842 /* RETableViewManager.bundle */; };
+		0073A7E31B500D8E008CD842 /* RETableViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7C71B500D8E008CD842 /* RETableViewManager.m */; };
+		0073A7E41B500D8E008CD842 /* RETableViewOptionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7C91B500D8E008CD842 /* RETableViewOptionsController.m */; };
+		0073A7E51B500D8E008CD842 /* RETableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7CB1B500D8E008CD842 /* RETableViewSection.m */; };
+		0073A7F81B50122D008CD842 /* REFormattedNumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7E91B50122D008CD842 /* REFormattedNumberField.m */; };
+		0073A7F91B50122D008CD842 /* NSError+REValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7EC1B50122D008CD842 /* NSError+REValidation.m */; };
+		0073A7FA1B50122D008CD842 /* REValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7EE1B50122D008CD842 /* REValidation.m */; };
+		0073A7FB1B50122D008CD842 /* REValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7F01B50122D008CD842 /* REValidator.m */; };
+		0073A7FC1B50122D008CD842 /* REEmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7F31B50122D008CD842 /* REEmailValidator.m */; };
+		0073A7FD1B50122D008CD842 /* RELengthValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7F51B50122D008CD842 /* RELengthValidator.m */; };
+		0073A7FE1B50122D008CD842 /* REPresenceValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7F71B50122D008CD842 /* REPresenceValidator.m */; };
+		00BE52591B54033200D6690E /* ConsumptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BE52581B54033200D6690E /* ConsumptionCell.xib */; };
+		00BE525C1B540F8F00D6690E /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BE525B1B540F8F00D6690E /* MainController.m */; };
+		00BE52601B54E9F200D6690E /* ConsumptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BE525F1B54E9F200D6690E /* ConsumptionCell.m */; };
+		00BE52631B54EA3300D6690E /* ConsumptionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BE52621B54EA3300D6690E /* ConsumptionModel.m */; };
+		00CEDE661B566F7E00DB4DC7 /* BaseDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CEDE651B566F7E00DB4DC7 /* BaseDB.m */; };
+		00CEDE681B567AB900DB4DC7 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CEDE671B567AB900DB4DC7 /* libsqlite3.0.dylib */; };
+		00DD3BF21B59302F00E0060E /* TConsumption.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DD3BF11B59302F00E0060E /* TConsumption.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +71,90 @@
 		0054811D1B4EBE8F004159AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0054811F1B4EBE8F004159AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		005481201B4EBE8F004159AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		005481221B4EBE8F004159AE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		005481231B4EBE8F004159AE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		005481261B4EBE8F004159AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		005481221B4EBE8F004159AE /* EditConsumptionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditConsumptionController.h; sourceTree = "<group>"; };
+		005481231B4EBE8F004159AE /* EditConsumptionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditConsumptionController.m; sourceTree = "<group>"; };
 		005481281B4EBE8F004159AE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0054812B1B4EBE8F004159AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		005481311B4EBE8F004159AE /* IosMiserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IosMiserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		005481361B4EBE8F004159AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		005481371B4EBE8F004159AE /* IosMiserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IosMiserTests.m; sourceTree = "<group>"; };
+		0073A7981B500D8E008CD842 /* RETableViewBoolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewBoolCell.h; sourceTree = "<group>"; };
+		0073A7991B500D8E008CD842 /* RETableViewBoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewBoolCell.m; sourceTree = "<group>"; };
+		0073A79A1B500D8E008CD842 /* RETableViewCreditCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewCreditCardCell.h; sourceTree = "<group>"; };
+		0073A79B1B500D8E008CD842 /* RETableViewCreditCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewCreditCardCell.m; sourceTree = "<group>"; };
+		0073A79C1B500D8E008CD842 /* RETableViewDateTimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewDateTimeCell.h; sourceTree = "<group>"; };
+		0073A79D1B500D8E008CD842 /* RETableViewDateTimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewDateTimeCell.m; sourceTree = "<group>"; };
+		0073A79E1B500D8E008CD842 /* RETableViewFloatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewFloatCell.h; sourceTree = "<group>"; };
+		0073A79F1B500D8E008CD842 /* RETableViewFloatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewFloatCell.m; sourceTree = "<group>"; };
+		0073A7A01B500D8E008CD842 /* RETableViewLongTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewLongTextCell.h; sourceTree = "<group>"; };
+		0073A7A11B500D8E008CD842 /* RETableViewLongTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewLongTextCell.m; sourceTree = "<group>"; };
+		0073A7A21B500D8E008CD842 /* RETableViewNumberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewNumberCell.h; sourceTree = "<group>"; };
+		0073A7A31B500D8E008CD842 /* RETableViewNumberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewNumberCell.m; sourceTree = "<group>"; };
+		0073A7A41B500D8E008CD842 /* RETableViewOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewOptionCell.h; sourceTree = "<group>"; };
+		0073A7A51B500D8E008CD842 /* RETableViewOptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewOptionCell.m; sourceTree = "<group>"; };
+		0073A7A61B500D8E008CD842 /* RETableViewTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewTextCell.h; sourceTree = "<group>"; };
+		0073A7A71B500D8E008CD842 /* RETableViewTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewTextCell.m; sourceTree = "<group>"; };
+		0073A7A91B500D8E008CD842 /* REBoolItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REBoolItem.h; sourceTree = "<group>"; };
+		0073A7AA1B500D8E008CD842 /* REBoolItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REBoolItem.m; sourceTree = "<group>"; };
+		0073A7AB1B500D8E008CD842 /* RECreditCardItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECreditCardItem.h; sourceTree = "<group>"; };
+		0073A7AC1B500D8E008CD842 /* RECreditCardItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECreditCardItem.m; sourceTree = "<group>"; };
+		0073A7AD1B500D8E008CD842 /* REDateTimeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REDateTimeItem.h; sourceTree = "<group>"; };
+		0073A7AE1B500D8E008CD842 /* REDateTimeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REDateTimeItem.m; sourceTree = "<group>"; };
+		0073A7AF1B500D8E008CD842 /* REFloatItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFloatItem.h; sourceTree = "<group>"; };
+		0073A7B01B500D8E008CD842 /* REFloatItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFloatItem.m; sourceTree = "<group>"; };
+		0073A7B11B500D8E008CD842 /* RELongTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RELongTextItem.h; sourceTree = "<group>"; };
+		0073A7B21B500D8E008CD842 /* RELongTextItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RELongTextItem.m; sourceTree = "<group>"; };
+		0073A7B31B500D8E008CD842 /* REMultipleChoiceItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REMultipleChoiceItem.h; sourceTree = "<group>"; };
+		0073A7B41B500D8E008CD842 /* REMultipleChoiceItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REMultipleChoiceItem.m; sourceTree = "<group>"; };
+		0073A7B51B500D8E008CD842 /* RENumberItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RENumberItem.h; sourceTree = "<group>"; };
+		0073A7B61B500D8E008CD842 /* RENumberItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RENumberItem.m; sourceTree = "<group>"; };
+		0073A7B71B500D8E008CD842 /* RERadioItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RERadioItem.h; sourceTree = "<group>"; };
+		0073A7B81B500D8E008CD842 /* RERadioItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RERadioItem.m; sourceTree = "<group>"; };
+		0073A7B91B500D8E008CD842 /* RETextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETextItem.h; sourceTree = "<group>"; };
+		0073A7BA1B500D8E008CD842 /* RETextItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETextItem.m; sourceTree = "<group>"; };
+		0073A7BB1B500D8E008CD842 /* REActionBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REActionBar.h; sourceTree = "<group>"; };
+		0073A7BC1B500D8E008CD842 /* REActionBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REActionBar.m; sourceTree = "<group>"; };
+		0073A7BD1B500D8E008CD842 /* REPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REPlaceholderTextView.h; sourceTree = "<group>"; };
+		0073A7BE1B500D8E008CD842 /* REPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REPlaceholderTextView.m; sourceTree = "<group>"; };
+		0073A7BF1B500D8E008CD842 /* RETableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewCell.h; sourceTree = "<group>"; };
+		0073A7C01B500D8E008CD842 /* RETableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewCell.m; sourceTree = "<group>"; };
+		0073A7C11B500D8E008CD842 /* RETableViewCellStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewCellStyle.h; sourceTree = "<group>"; };
+		0073A7C21B500D8E008CD842 /* RETableViewCellStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewCellStyle.m; sourceTree = "<group>"; };
+		0073A7C31B500D8E008CD842 /* RETableViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewItem.h; sourceTree = "<group>"; };
+		0073A7C41B500D8E008CD842 /* RETableViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewItem.m; sourceTree = "<group>"; };
+		0073A7C51B500D8E008CD842 /* RETableViewManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RETableViewManager.bundle; sourceTree = "<group>"; };
+		0073A7C61B500D8E008CD842 /* RETableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewManager.h; sourceTree = "<group>"; };
+		0073A7C71B500D8E008CD842 /* RETableViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewManager.m; sourceTree = "<group>"; };
+		0073A7C81B500D8E008CD842 /* RETableViewOptionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewOptionsController.h; sourceTree = "<group>"; };
+		0073A7C91B500D8E008CD842 /* RETableViewOptionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewOptionsController.m; sourceTree = "<group>"; };
+		0073A7CA1B500D8E008CD842 /* RETableViewSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewSection.h; sourceTree = "<group>"; };
+		0073A7CB1B500D8E008CD842 /* RETableViewSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewSection.m; sourceTree = "<group>"; };
+		0073A7E81B50122D008CD842 /* REFormattedNumberField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFormattedNumberField.h; sourceTree = "<group>"; };
+		0073A7E91B50122D008CD842 /* REFormattedNumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFormattedNumberField.m; sourceTree = "<group>"; };
+		0073A7EB1B50122D008CD842 /* NSError+REValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+REValidation.h"; sourceTree = "<group>"; };
+		0073A7EC1B50122D008CD842 /* NSError+REValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+REValidation.m"; sourceTree = "<group>"; };
+		0073A7ED1B50122D008CD842 /* REValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REValidation.h; sourceTree = "<group>"; };
+		0073A7EE1B50122D008CD842 /* REValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REValidation.m; sourceTree = "<group>"; };
+		0073A7EF1B50122D008CD842 /* REValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REValidator.h; sourceTree = "<group>"; };
+		0073A7F01B50122D008CD842 /* REValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REValidator.m; sourceTree = "<group>"; };
+		0073A7F21B50122D008CD842 /* REEmailValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REEmailValidator.h; sourceTree = "<group>"; };
+		0073A7F31B50122D008CD842 /* REEmailValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REEmailValidator.m; sourceTree = "<group>"; };
+		0073A7F41B50122D008CD842 /* RELengthValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RELengthValidator.h; sourceTree = "<group>"; };
+		0073A7F51B50122D008CD842 /* RELengthValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RELengthValidator.m; sourceTree = "<group>"; };
+		0073A7F61B50122D008CD842 /* REPresenceValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REPresenceValidator.h; sourceTree = "<group>"; };
+		0073A7F71B50122D008CD842 /* REPresenceValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REPresenceValidator.m; sourceTree = "<group>"; };
+		00BE52581B54033200D6690E /* ConsumptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsumptionCell.xib; sourceTree = "<group>"; };
+		00BE525B1B540F8F00D6690E /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		00BE525D1B540FB500D6690E /* MainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		00BE525E1B54E9E400D6690E /* ConsumptionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConsumptionCell.h; sourceTree = "<group>"; };
+		00BE525F1B54E9F200D6690E /* ConsumptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumptionCell.m; sourceTree = "<group>"; };
+		00BE52611B54EA2000D6690E /* ConsumptionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConsumptionModel.h; sourceTree = "<group>"; };
+		00BE52621B54EA3300D6690E /* ConsumptionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumptionModel.m; sourceTree = "<group>"; };
+		00CEDE641B566F6E00DB4DC7 /* BaseDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseDB.h; sourceTree = "<group>"; };
+		00CEDE651B566F7E00DB4DC7 /* BaseDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDB.m; sourceTree = "<group>"; };
+		00CEDE671B567AB900DB4DC7 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		00DD3BF01B59301800E0060E /* TConsumption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TConsumption.h; sourceTree = "<group>"; };
+		00DD3BF11B59302F00E0060E /* TConsumption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TConsumption.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00CEDE681B567AB900DB4DC7 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,8 +179,10 @@
 		0054810F1B4EBE8F004159AE = {
 			isa = PBXGroup;
 			children = (
+				0073A7961B500D8E008CD842 /* RETableViewManager */,
 				0054811A1B4EBE8F004159AE /* IosMiser */,
 				005481341B4EBE8F004159AE /* IosMiserTests */,
+				00CEDE691B567AEF00DB4DC7 /* Frameworks */,
 				005481191B4EBE8F004159AE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,11 +199,12 @@
 		0054811A1B4EBE8F004159AE /* IosMiser */ = {
 			isa = PBXGroup;
 			children = (
+				00CEDE631B566F3900DB4DC7 /* db */,
+				00BE525A1B540D6400D6690E /* controller */,
+				00BE52571B54028000D6690E /* view */,
+				00BE52561B54027300D6690E /* model */,
 				0054811F1B4EBE8F004159AE /* AppDelegate.h */,
 				005481201B4EBE8F004159AE /* AppDelegate.m */,
-				005481221B4EBE8F004159AE /* ViewController.h */,
-				005481231B4EBE8F004159AE /* ViewController.m */,
-				005481251B4EBE8F004159AE /* Main.storyboard */,
 				005481281B4EBE8F004159AE /* Images.xcassets */,
 				0054812A1B4EBE8F004159AE /* LaunchScreen.xib */,
 				0054811B1B4EBE8F004159AE /* Supporting Files */,
@@ -117,6 +236,175 @@
 				005481361B4EBE8F004159AE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0073A7961B500D8E008CD842 /* RETableViewManager */ = {
+			isa = PBXGroup;
+			children = (
+				0073A7E61B50122D008CD842 /* Vendor */,
+				0073A7971B500D8E008CD842 /* Cells */,
+				0073A7A81B500D8E008CD842 /* Items */,
+				0073A7BB1B500D8E008CD842 /* REActionBar.h */,
+				0073A7BC1B500D8E008CD842 /* REActionBar.m */,
+				0073A7BD1B500D8E008CD842 /* REPlaceholderTextView.h */,
+				0073A7BE1B500D8E008CD842 /* REPlaceholderTextView.m */,
+				0073A7BF1B500D8E008CD842 /* RETableViewCell.h */,
+				0073A7C01B500D8E008CD842 /* RETableViewCell.m */,
+				0073A7C11B500D8E008CD842 /* RETableViewCellStyle.h */,
+				0073A7C21B500D8E008CD842 /* RETableViewCellStyle.m */,
+				0073A7C31B500D8E008CD842 /* RETableViewItem.h */,
+				0073A7C41B500D8E008CD842 /* RETableViewItem.m */,
+				0073A7C51B500D8E008CD842 /* RETableViewManager.bundle */,
+				0073A7C61B500D8E008CD842 /* RETableViewManager.h */,
+				0073A7C71B500D8E008CD842 /* RETableViewManager.m */,
+				0073A7C81B500D8E008CD842 /* RETableViewOptionsController.h */,
+				0073A7C91B500D8E008CD842 /* RETableViewOptionsController.m */,
+				0073A7CA1B500D8E008CD842 /* RETableViewSection.h */,
+				0073A7CB1B500D8E008CD842 /* RETableViewSection.m */,
+			);
+			path = RETableViewManager;
+			sourceTree = "<group>";
+		};
+		0073A7971B500D8E008CD842 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0073A7981B500D8E008CD842 /* RETableViewBoolCell.h */,
+				0073A7991B500D8E008CD842 /* RETableViewBoolCell.m */,
+				0073A79A1B500D8E008CD842 /* RETableViewCreditCardCell.h */,
+				0073A79B1B500D8E008CD842 /* RETableViewCreditCardCell.m */,
+				0073A79C1B500D8E008CD842 /* RETableViewDateTimeCell.h */,
+				0073A79D1B500D8E008CD842 /* RETableViewDateTimeCell.m */,
+				0073A79E1B500D8E008CD842 /* RETableViewFloatCell.h */,
+				0073A79F1B500D8E008CD842 /* RETableViewFloatCell.m */,
+				0073A7A01B500D8E008CD842 /* RETableViewLongTextCell.h */,
+				0073A7A11B500D8E008CD842 /* RETableViewLongTextCell.m */,
+				0073A7A21B500D8E008CD842 /* RETableViewNumberCell.h */,
+				0073A7A31B500D8E008CD842 /* RETableViewNumberCell.m */,
+				0073A7A41B500D8E008CD842 /* RETableViewOptionCell.h */,
+				0073A7A51B500D8E008CD842 /* RETableViewOptionCell.m */,
+				0073A7A61B500D8E008CD842 /* RETableViewTextCell.h */,
+				0073A7A71B500D8E008CD842 /* RETableViewTextCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0073A7A81B500D8E008CD842 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				0073A7A91B500D8E008CD842 /* REBoolItem.h */,
+				0073A7AA1B500D8E008CD842 /* REBoolItem.m */,
+				0073A7AB1B500D8E008CD842 /* RECreditCardItem.h */,
+				0073A7AC1B500D8E008CD842 /* RECreditCardItem.m */,
+				0073A7AD1B500D8E008CD842 /* REDateTimeItem.h */,
+				0073A7AE1B500D8E008CD842 /* REDateTimeItem.m */,
+				0073A7AF1B500D8E008CD842 /* REFloatItem.h */,
+				0073A7B01B500D8E008CD842 /* REFloatItem.m */,
+				0073A7B11B500D8E008CD842 /* RELongTextItem.h */,
+				0073A7B21B500D8E008CD842 /* RELongTextItem.m */,
+				0073A7B31B500D8E008CD842 /* REMultipleChoiceItem.h */,
+				0073A7B41B500D8E008CD842 /* REMultipleChoiceItem.m */,
+				0073A7B51B500D8E008CD842 /* RENumberItem.h */,
+				0073A7B61B500D8E008CD842 /* RENumberItem.m */,
+				0073A7B71B500D8E008CD842 /* RERadioItem.h */,
+				0073A7B81B500D8E008CD842 /* RERadioItem.m */,
+				0073A7B91B500D8E008CD842 /* RETextItem.h */,
+				0073A7BA1B500D8E008CD842 /* RETextItem.m */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		0073A7E61B50122D008CD842 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				0073A7E71B50122D008CD842 /* REFormattedNumberField */,
+				0073A7EA1B50122D008CD842 /* REValidation */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		0073A7E71B50122D008CD842 /* REFormattedNumberField */ = {
+			isa = PBXGroup;
+			children = (
+				0073A7E81B50122D008CD842 /* REFormattedNumberField.h */,
+				0073A7E91B50122D008CD842 /* REFormattedNumberField.m */,
+			);
+			path = REFormattedNumberField;
+			sourceTree = "<group>";
+		};
+		0073A7EA1B50122D008CD842 /* REValidation */ = {
+			isa = PBXGroup;
+			children = (
+				0073A7EB1B50122D008CD842 /* NSError+REValidation.h */,
+				0073A7EC1B50122D008CD842 /* NSError+REValidation.m */,
+				0073A7ED1B50122D008CD842 /* REValidation.h */,
+				0073A7EE1B50122D008CD842 /* REValidation.m */,
+				0073A7EF1B50122D008CD842 /* REValidator.h */,
+				0073A7F01B50122D008CD842 /* REValidator.m */,
+				0073A7F11B50122D008CD842 /* Validators */,
+			);
+			path = REValidation;
+			sourceTree = "<group>";
+		};
+		0073A7F11B50122D008CD842 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				0073A7F21B50122D008CD842 /* REEmailValidator.h */,
+				0073A7F31B50122D008CD842 /* REEmailValidator.m */,
+				0073A7F41B50122D008CD842 /* RELengthValidator.h */,
+				0073A7F51B50122D008CD842 /* RELengthValidator.m */,
+				0073A7F61B50122D008CD842 /* REPresenceValidator.h */,
+				0073A7F71B50122D008CD842 /* REPresenceValidator.m */,
+			);
+			path = Validators;
+			sourceTree = "<group>";
+		};
+		00BE52561B54027300D6690E /* model */ = {
+			isa = PBXGroup;
+			children = (
+				00BE52611B54EA2000D6690E /* ConsumptionModel.h */,
+				00BE52621B54EA3300D6690E /* ConsumptionModel.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		00BE52571B54028000D6690E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				00BE525E1B54E9E400D6690E /* ConsumptionCell.h */,
+				00BE525F1B54E9F200D6690E /* ConsumptionCell.m */,
+				00BE52581B54033200D6690E /* ConsumptionCell.xib */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		00BE525A1B540D6400D6690E /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				005481221B4EBE8F004159AE /* EditConsumptionController.h */,
+				005481231B4EBE8F004159AE /* EditConsumptionController.m */,
+				00BE525D1B540FB500D6690E /* MainController.h */,
+				00BE525B1B540F8F00D6690E /* MainController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		00CEDE631B566F3900DB4DC7 /* db */ = {
+			isa = PBXGroup;
+			children = (
+				00CEDE641B566F6E00DB4DC7 /* BaseDB.h */,
+				00CEDE651B566F7E00DB4DC7 /* BaseDB.m */,
+				00DD3BF01B59301800E0060E /* TConsumption.h */,
+				00DD3BF11B59302F00E0060E /* TConsumption.m */,
+			);
+			name = db;
+			sourceTree = "<group>";
+		};
+		00CEDE691B567AEF00DB4DC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00CEDE671B567AB900DB4DC7 /* libsqlite3.0.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +487,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				005481271B4EBE8F004159AE /* Main.storyboard in Resources */,
 				0054812C1B4EBE8F004159AE /* LaunchScreen.xib in Resources */,
+				00BE52591B54033200D6690E /* ConsumptionCell.xib in Resources */,
+				0073A7E21B500D8E008CD842 /* RETableViewManager.bundle in Resources */,
 				005481291B4EBE8F004159AE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,8 +508,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				005481241B4EBE8F004159AE /* ViewController.m in Sources */,
+				0073A7CF1B500D8E008CD842 /* RETableViewFloatCell.m in Sources */,
+				0073A7D31B500D8E008CD842 /* RETableViewTextCell.m in Sources */,
+				0073A7FA1B50122D008CD842 /* REValidation.m in Sources */,
+				0073A7D21B500D8E008CD842 /* RETableViewOptionCell.m in Sources */,
+				00DD3BF21B59302F00E0060E /* TConsumption.m in Sources */,
+				005481241B4EBE8F004159AE /* EditConsumptionController.m in Sources */,
+				0073A7FE1B50122D008CD842 /* REPresenceValidator.m in Sources */,
+				0073A7FB1B50122D008CD842 /* REValidator.m in Sources */,
+				0073A7E41B500D8E008CD842 /* RETableViewOptionsController.m in Sources */,
+				0073A7E11B500D8E008CD842 /* RETableViewItem.m in Sources */,
+				0073A7D51B500D8E008CD842 /* RECreditCardItem.m in Sources */,
+				0073A7F91B50122D008CD842 /* NSError+REValidation.m in Sources */,
+				0073A7DF1B500D8E008CD842 /* RETableViewCell.m in Sources */,
+				00BE52631B54EA3300D6690E /* ConsumptionModel.m in Sources */,
+				0073A7FD1B50122D008CD842 /* RELengthValidator.m in Sources */,
+				0073A7CE1B500D8E008CD842 /* RETableViewDateTimeCell.m in Sources */,
+				0073A7D81B500D8E008CD842 /* RELongTextItem.m in Sources */,
+				0073A7D11B500D8E008CD842 /* RETableViewNumberCell.m in Sources */,
+				0073A7DD1B500D8E008CD842 /* REActionBar.m in Sources */,
+				0073A7D91B500D8E008CD842 /* REMultipleChoiceItem.m in Sources */,
+				0073A7D01B500D8E008CD842 /* RETableViewLongTextCell.m in Sources */,
+				0073A7D71B500D8E008CD842 /* REFloatItem.m in Sources */,
+				0073A7CD1B500D8E008CD842 /* RETableViewCreditCardCell.m in Sources */,
+				0073A7DB1B500D8E008CD842 /* RERadioItem.m in Sources */,
+				00BE52601B54E9F200D6690E /* ConsumptionCell.m in Sources */,
+				0073A7E31B500D8E008CD842 /* RETableViewManager.m in Sources */,
+				0073A7E51B500D8E008CD842 /* RETableViewSection.m in Sources */,
+				0073A7FC1B50122D008CD842 /* REEmailValidator.m in Sources */,
+				0073A7DE1B500D8E008CD842 /* REPlaceholderTextView.m in Sources */,
+				00CEDE661B566F7E00DB4DC7 /* BaseDB.m in Sources */,
 				005481211B4EBE8F004159AE /* AppDelegate.m in Sources */,
+				0073A7DC1B500D8E008CD842 /* RETextItem.m in Sources */,
+				00BE525C1B540F8F00D6690E /* MainController.m in Sources */,
+				0073A7D41B500D8E008CD842 /* REBoolItem.m in Sources */,
+				0073A7CC1B500D8E008CD842 /* RETableViewBoolCell.m in Sources */,
+				0073A7E01B500D8E008CD842 /* RETableViewCellStyle.m in Sources */,
+				0073A7F81B50122D008CD842 /* REFormattedNumberField.m in Sources */,
+				0073A7D61B500D8E008CD842 /* REDateTimeItem.m in Sources */,
+				0073A7DA1B500D8E008CD842 /* RENumberItem.m in Sources */,
 				0054811E1B4EBE8F004159AE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,14 +570,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		005481251B4EBE8F004159AE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				005481261B4EBE8F004159AE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0054812A1B4EBE8F004159AE /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -299,7 +617,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -336,7 +654,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -347,7 +665,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = IosMiser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -357,7 +677,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = IosMiser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -416,6 +738,7 @@
 				0054813D1B4EBE8F004159AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0054813E1B4EBE8F004159AE /* Build configuration list for PBXNativeTarget "IosMiserTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +747,7 @@
 				005481401B4EBE8F004159AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
