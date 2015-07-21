@@ -7,27 +7,34 @@
 //
 
 #import "EditConsumptionController.h"
-
+#import "UtilDate.h"
 
 @interface EditConsumptionController ()
 
-@property (strong, readwrite, nonatomic) RELongTextItem *longTextItem;
-@property (strong, readwrite, nonatomic) REDateTimeItem *dateTimeItem;
-@property (strong, readwrite, nonatomic) REBoolItem *boolItem;
-@property (strong, readwrite, nonatomic) RERadioItem *radioItem;
-@property (strong, readwrite, nonatomic) RENumberItem *numberItem;
+@property (strong, readwrite, nonatomic) RELongTextItem *ltiTitle;
+@property (strong, readwrite, nonatomic) REDateTimeItem *dtiStartTime;
+@property (strong, readwrite, nonatomic) REBoolItem *biCalculated;
+@property (strong, readwrite, nonatomic) RERadioItem *riIsConsumption;
+@property (strong, readwrite, nonatomic) RENumberItem *niMoney;
 @property (nonatomic,assign)BOOL isAdd;
+@property (strong, readwrite, nonatomic) RETableViewSection *section;
+@property (strong, readwrite, nonatomic) ConsumptionModel *consumption;
 
 @end
 
 @implementation EditConsumptionController
 
-- (instancetype) initWithAction:(BOOL)isAdd{
+- (instancetype) initByAddUI{
     self = [self initWithStyle:UITableViewStyleGrouped];
-    self.isAdd = isAdd;
+    self.isAdd = true;
     return self;
 }
-
+- (instancetype) initByUpdateUI:(ConsumptionModel *)consumption{
+    self = [self initWithStyle:UITableViewStyleGrouped];
+    self.isAdd = false;
+    self.consumption = consumption;
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"记账";
@@ -36,79 +43,95 @@
     
     self.basicControlsSection = [self addBasicControls];
     self.buttonSection = [self addButton];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [self assignToControl];
+}
+
+- (void)assignToControl{
+    self.ltiTitle.value = self.consumption.title;
+    self.dtiStartTime.value = [UtilDate dateFromString:self.consumption.startDate];
+    self.riIsConsumption.value = self.consumption.isConsumption?@"支出":@"收入";
+    self.niMoney.value = [NSString stringWithFormat:@"%i", [self.consumption.money intValue]];
+    
 }
 
 - (RETableViewSection *)addBasicControls
 {
-    __typeof (&*self) __weak weakSelf = self;
+    self.section = [RETableViewSection sectionWithHeaderTitle:@"账目项目"];
+    [_manager addSection:self.section];
     
-    RETableViewSection *section = [RETableViewSection sectionWithHeaderTitle:@"账目项目"];
-    [_manager addSection:section];
+    [self.section addItem:@"事项或摘要描述："];
+    [self addTitle];
+    [self addStartDate];
+    [self addIsConsumption];
+    [self addMoney];
+    [self addIsCalculated];
     
-    [section addItem:@"事项或摘要描述："];
-    
-    self.longTextItem = [RELongTextItem itemWithValue:nil placeholder:@"这里输入内容"];
-    self.longTextItem.cellHeight = 88;
-    [section addItem:self.longTextItem];
-    
-    self.dateTimeItem = [REDateTimeItem itemWithTitle:@"发生时刻：" value:[NSDate date] placeholder:nil format:@"yyyy-MM-dd hh:mm a" datePickerMode:UIDatePickerModeDateAndTime];
-    [section addItem:self.dateTimeItem];
-    
-    self.radioItem = [RERadioItem itemWithTitle:@"产生费用方式：" value:@"支出" selectionHandler:^(RERadioItem *item) {
-        [item deselectRowAnimated:YES]; // same as [weakSelf.tableView deselectRowAtIndexPath:item.indexPath animated:YES];
-        
-        // Generate sample options
-        //
-        NSMutableArray *options = [[NSMutableArray alloc] init];
-        /*
-         for (NSInteger i = 1; i < 40; i++)
-         [options addObject:[NSString stringWithFormat:@"Option %i", i]];
-         */
-        [options addObject:@"支出"];
-        [options addObject:@"收入"];
-        // Present options controller
-        //
-        RETableViewOptionsController *optionsController = [[RETableViewOptionsController alloc] initWithItem:item options:options multipleChoice:NO completionHandler:^{
-            [weakSelf.navigationController popViewControllerAnimated:YES];
-            
-            [item reloadRowWithAnimation:UITableViewRowAnimationNone]; // same as [weakSelf.tableView reloadRowsAtIndexPaths:@[item.indexPath] withRowAnimation:UITableViewRowAnimationNone];
-        }];
-        
-        // Adjust styles
-        //
-        optionsController.delegate = weakSelf;
-        optionsController.style = section.style;
-        if (weakSelf.tableView.backgroundView == nil) {
-            optionsController.tableView.backgroundColor = weakSelf.tableView.backgroundColor;
-            optionsController.tableView.backgroundView = nil;
-        }
-        
-        // Push the options controller
-        //
-        [weakSelf.navigationController pushViewController:optionsController animated:YES];
-    }];
-    [section addItem:self.radioItem];
-    
-    self.numberItem = [RENumberItem itemWithTitle:@"金额：" value:@"" placeholder:@"￥0" format:@"￥XXXXXXX"];
-    [section addItem:self.numberItem];
-    
-    
-    self.boolItem = [REBoolItem itemWithTitle:@"是否入账：" value:YES switchValueChangeHandler:^(REBoolItem *item) {
-        NSLog(@"Value: %@", item.value ? @"YES" : @"NO");
-    }];
-    [section addItem:self.boolItem];
-    
-    return section;
+    return self.section;
 }
 
-- (NSString *)stringFromDate:(NSDate *)date{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    //zzz表示时区，zzz可以删除，这样返回的日期字符将不包含时区信息。
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-    NSString *destDateString = [dateFormatter stringFromDate:date];
-    return destDateString;
+-(void)addTitle{
+    self.ltiTitle = [RELongTextItem itemWithValue:nil
+                                      placeholder:@"这里输入内容"];
+    self.ltiTitle.cellHeight = 88;
+    [self.section addItem:self.ltiTitle];
 }
+-(void)addIsConsumption{
+    __typeof (&*self) __weak weakSelf = self;
+    self.riIsConsumption = [RERadioItem itemWithTitle:@"产生费用方式："
+                                                value:@"支出"
+                                     selectionHandler:^(RERadioItem *item) {
+                                         [item deselectRowAnimated:YES];
+                                         
+                                         NSMutableArray *options = [[NSMutableArray alloc] init];
+                                         
+                                         [options addObject:@"支出"];
+                                         [options addObject:@"收入"];
+                                         
+                                         RETableViewOptionsController *optionsController = [[RETableViewOptionsController alloc] initWithItem:item
+                                                                                                                                      options:options
+                                                                                                                               multipleChoice:NO
+                                                                                                                            completionHandler:^{
+                                                                                                                                [weakSelf.navigationController popViewControllerAnimated:YES];
+                                                                                                                                
+                                                                                                                                [item reloadRowWithAnimation:UITableViewRowAnimationNone];
+                                                                                                                            }];
+                                         
+                                         optionsController.delegate = weakSelf;
+                                         optionsController.style = self.section.style;
+                                         if (weakSelf.tableView.backgroundView == nil) {
+                                             optionsController.tableView.backgroundColor = weakSelf.tableView.backgroundColor;
+                                             optionsController.tableView.backgroundView = nil;
+                                         }
+                                         [weakSelf.navigationController pushViewController:optionsController animated:YES];
+                                     }];
+    [self.section addItem:self.riIsConsumption];
+}
+-(void)addStartDate{
+    self.dtiStartTime = [REDateTimeItem itemWithTitle:@"发生时刻："
+                                                value:[NSDate date]
+                                          placeholder:nil
+                                               format:@"yyyy-MM-dd hh:mm a"
+                                       datePickerMode:UIDatePickerModeDateAndTime];
+    [self.section addItem:self.dtiStartTime];
+}
+-(void)addMoney{
+    self.niMoney = [RENumberItem itemWithTitle:@"金额："
+                                         value:@""
+                                   placeholder:@"￥0"
+                                        format:@"￥XXXXXXX"];
+    [self.section addItem:self.niMoney];
+}
+-(void)addIsCalculated{
+    self.biCalculated = [REBoolItem itemWithTitle:@"是否入账："
+                                            value:YES
+                         switchValueChangeHandler:^(REBoolItem *item) {
+                             NSLog(@"Value: %@", item.value ? @"YES" : @"NO");
+                         }];
+    [self.section addItem:self.biCalculated];
+}
+
+
 
 - (RETableViewSection *)addButton
 {
@@ -117,23 +140,23 @@
     RETableViewSection *section = [RETableViewSection section];
     [_manager addSection:section];
     
-    RETableViewItem *buttonItem = [RETableViewItem itemWithTitle:@"保存" accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
-        [weakSelf.tableView deselectRowAtIndexPath:item.indexPath animated:YES];
-        NSLog(@"longTextItem ＝ %@", self.longTextItem.value);
-        
-        ConsumptionModel *consumption = [[ConsumptionModel alloc]init];
-        consumption.title = self.longTextItem.value;
-        consumption.isConsumption = [self.radioItem.value  isEqual: @"支出"];
-        consumption.money = [NSNumber numberWithInt:[self.numberItem.value intValue]];
-        consumption.startDate = [self stringFromDate:self.dateTimeItem.value];
-        self.block(consumption,self.isAdd);
-        
-        [weakSelf.navigationController popViewControllerAnimated:YES];
-    }];
-    //    buttonItem.accessoryView.tintColor = [UIColor  orangeColor];
+    RETableViewItem *buttonItem = [RETableViewItem itemWithTitle:@"保存"
+                                                   accessoryType:UITableViewCellAccessoryNone
+                                                selectionHandler:^(RETableViewItem *item) {
+                                                    [weakSelf.tableView deselectRowAtIndexPath:item.indexPath animated:YES];
+                                                    NSLog(@"longTextItem ＝ %@", self.ltiTitle.value);
+                                                    
+                                                    ConsumptionModel *consumption = (self.consumption==nil)?[[ConsumptionModel alloc]init]:self.consumption;
+                                                    consumption.title = self.ltiTitle.value;
+                                                    consumption.isConsumption = [self.riIsConsumption.value  isEqual: @"支出"];
+                                                    consumption.money = [NSNumber numberWithInt:[self.niMoney.value intValue]];
+                                                    consumption.startDate = [UtilDate stringFromDate:self.dtiStartTime.value];
+                                                    self.block(consumption,self.isAdd);
+                                                    
+                                                    [weakSelf.navigationController popViewControllerAnimated:YES];
+                                                }];
     buttonItem.textAlignment = NSTextAlignmentCenter;
     [section addItem:buttonItem];
-    //    section.tableViewManager.tableView.backgroundColor =[UIColor  orangeColor];
     
     return section;
 }

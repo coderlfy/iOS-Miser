@@ -17,6 +17,7 @@
     self.describe.text = self.item.title;
     self.money.text = [NSString stringWithFormat:@"¥%i", [self.item.money intValue]];
     self.occurTime.text = self.item.startDate;
+    
 }
 
 @end

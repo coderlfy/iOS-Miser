@@ -25,19 +25,35 @@
 {
     [super viewDidLoad];
     self.title = @"守财奴";
+    //设置导航条的样式（背景色／字体颜色等）
+    [self setNavigationBarStyle];
+    //添加导航条上的功能按钮
+    [self addNavigationButtons];
+    //加载主题内容
+    [self loadContent];
+}
+
+- (void)setNavigationBarStyle{
     self.navigationController.navigationBar.barTintColor = [ UIColor colorWithRed: 30.0f/255.0f
                                                                             green: 144.0/255.0f
                                                                              blue: 255.0f/255.0f
                                                                             alpha: 0.5
                                                             ];
     [self.navigationController.navigationBar setTitleTextAttributes: @{
-                                                                       NSFontAttributeName:[UIFont systemFontOfSize:19], NSForegroundColorAttributeName:[UIColor whiteColor]}];
+                                                                       NSFontAttributeName:[UIFont systemFontOfSize:19],
+                                                                       NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-    
-    UIBarButtonItem *item=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAction)];
+}
+
+- (void)addNavigationButtons{
+    UIBarButtonItem *item=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                        target:self
+                                                                        action:@selector(addAction)];
     self.navigationItem.rightBarButtonItem=item;
-    
+}
+
+- (void)loadContent{
     _manager = [[RETableViewManager alloc] initWithTableView:self.tableView delegate:self];
     _manager[@"ConsumptionModel"] = @"ConsumptionCell";
     
@@ -50,9 +66,7 @@
     }
 }
 
-
-
--(void)loadStaticDataForSection {
+- (void)loadStaticDataForSection {
     
     for (NSInteger i = 1; i < 100; i++) {
         NSString *title = [NSString stringWithFormat:@"Item %i", i];
@@ -62,7 +76,7 @@
                                                     [item deselectRowAnimated:YES];
                                                 }];
         item.title = @"good";
-        item.money = title;
+        item.money = @120;
         item.startDate = title;
         item.cellHeight = 70;
         
@@ -70,22 +84,39 @@
     }
 }
 
--(void)loadDataForSection {
-    
+- (void)loadDataForSection {
+    __typeof (&*self) __weak weakSelf = self;
     TConsumption *db = [[TConsumption alloc] init];
+    
     [db creatTableWithDataBaseName];
     ConsumptionModel *consumption = [[ConsumptionModel alloc]init];
     consumption.title = @"招财宝投资";
     consumption.isConsumption = false;
-    consumption.money = @"1200";
+    consumption.money = [NSNumber numberWithInt:120];
     consumption.startDate = @"2015-6-22 12:33";
-    
     [db addConsumptionByExample:consumption];
+     
     self.consumptions = [db findAllConsumption];
-    //    self.data = consumptions;
     for (ConsumptionModel *u in self.consumptions) {
         u.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         u.cellHeight = 60;
+        u.editingStyle = UITableViewCellEditingStyleDelete;
+        u.deletionHandler = ^(RETableViewItem *item) {
+            ConsumptionModel *currentModel = (ConsumptionModel *)item;
+            [self.consumptions removeObject:currentModel];
+            [[TConsumption shareConsumption] deleteConsumption:currentModel];
+        };
+        u.selectionHandler = ^(RETableViewItem *item) {
+            ConsumptionModel *currentModel = (ConsumptionModel *)item;
+
+            EditConsumptionController *addcontroller = [[EditConsumptionController alloc] initByUpdateUI:currentModel];
+            addcontroller.block = ^(ConsumptionModel *model, BOOL isAdd){
+                TConsumption *db=[[TConsumption alloc] init];
+                [db updateConsumption:model];
+                [weakSelf.tableView reloadData];
+            };
+            [self.navigationController pushViewController:addcontroller animated:YES];        };
+
         [self.section addItem:u];
     }
 }
@@ -93,7 +124,7 @@
 - (void)addAction{
     __typeof (&*self) __weak weakSelf = self;
     
-    EditConsumptionController *addcontroller =[[EditConsumptionController alloc] initWithAction:true];
+    EditConsumptionController *addcontroller =[[EditConsumptionController alloc] initByAddUI];
     addcontroller.block = ^(ConsumptionModel *model, BOOL isAdd){
         TConsumption *db=[[TConsumption alloc] init];
         [db addConsumption:model];
@@ -128,16 +159,8 @@
   willDisplayCell:(UITableViewCell *)cell
 forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    for (UIView *view in cell.contentView.subviews) {
-    //        if ([view isKindOfClass:[UILabel class]] || [view isKindOfClass:[UITextField class]] || [view isKindOfClass:[UITextView class]])
-    //            ((UILabel *)view).font = [UIFont fontWithName:@"Avenir-Medium" size:16];
-    //    }
-    
-    //    if ([cell isKindOfClass:[RETableViewCreditCardCell class]]) {
     ConsumptionCell *ccCell = (ConsumptionCell *)cell;
     ConsumptionModel *currentModel = self.consumptions[indexPath.row];
     ccCell.money.textColor = [self getMoneyColorWithIsConsumption:currentModel.isConsumption];
-    //    ccCell.cvvField.font = [UIFont fontWithName:@"Avenir-Medium" size:16];
-    //    }
 }
 @end

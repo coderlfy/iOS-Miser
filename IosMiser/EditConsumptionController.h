@@ -20,7 +20,7 @@ typedef void(^ButBlock)(ConsumptionModel *consumption, BOOL isAdd);
 @property (strong, readwrite, nonatomic) RETableViewSection *buttonSection;
 @property (nonatomic,copy) ButBlock block;
 
-- (instancetype) initWithAction:(BOOL)isAdd;
-
+- (instancetype) initByAddUI;
+- (instancetype) initByUpdateUI:(ConsumptionModel *)consumption;
 @end
 

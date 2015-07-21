@@ -10,7 +10,7 @@
 
 @interface ConsumptionModel : RETableViewItem
 
-//@property (copy, readwrite, nonatomic) NSString *describe;
+@property (copy, readwrite, nonatomic) NSNumber *ID;
 @property (copy, readwrite, nonatomic) NSNumber *money;
 @property (copy, readwrite, nonatomic) NSString *startDate;
 @property (readwrite, nonatomic) Boolean isConsumption;

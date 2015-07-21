@@ -50,6 +50,7 @@
 		00BE525C1B540F8F00D6690E /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BE525B1B540F8F00D6690E /* MainController.m */; };
 		00BE52601B54E9F200D6690E /* ConsumptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BE525F1B54E9F200D6690E /* ConsumptionCell.m */; };
 		00BE52631B54EA3300D6690E /* ConsumptionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BE52621B54EA3300D6690E /* ConsumptionModel.m */; };
+		00C92ACF1B5DD51D003FF202 /* UtilData.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C92ACE1B5DD51D003FF202 /* UtilData.m */; };
 		00CEDE661B566F7E00DB4DC7 /* BaseDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CEDE651B566F7E00DB4DC7 /* BaseDB.m */; };
 		00CEDE681B567AB900DB4DC7 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CEDE671B567AB900DB4DC7 /* libsqlite3.0.dylib */; };
 		00DD3BF21B59302F00E0060E /* TConsumption.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DD3BF11B59302F00E0060E /* TConsumption.m */; };
@@ -150,6 +151,8 @@
 		00BE525F1B54E9F200D6690E /* ConsumptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumptionCell.m; sourceTree = "<group>"; };
 		00BE52611B54EA2000D6690E /* ConsumptionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConsumptionModel.h; sourceTree = "<group>"; };
 		00BE52621B54EA3300D6690E /* ConsumptionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumptionModel.m; sourceTree = "<group>"; };
+		00C92ACD1B5DD504003FF202 /* UtilDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilDate.h; sourceTree = "<group>"; };
+		00C92ACE1B5DD51D003FF202 /* UtilData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilData.m; sourceTree = "<group>"; };
 		00CEDE641B566F6E00DB4DC7 /* BaseDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseDB.h; sourceTree = "<group>"; };
 		00CEDE651B566F7E00DB4DC7 /* BaseDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDB.m; sourceTree = "<group>"; };
 		00CEDE671B567AB900DB4DC7 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -199,6 +202,7 @@
 		0054811A1B4EBE8F004159AE /* IosMiser */ = {
 			isa = PBXGroup;
 			children = (
+				00C92ACC1B5DD4DD003FF202 /* util */,
 				00CEDE631B566F3900DB4DC7 /* db */,
 				00BE525A1B540D6400D6690E /* controller */,
 				00BE52571B54028000D6690E /* view */,
@@ -388,6 +392,15 @@
 			name = controller;
 			sourceTree = "<group>";
 		};
+		00C92ACC1B5DD4DD003FF202 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				00C92ACD1B5DD504003FF202 /* UtilDate.h */,
+				00C92ACE1B5DD51D003FF202 /* UtilData.m */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
 		00CEDE631B566F3900DB4DC7 /* db */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,6 +529,7 @@
 				005481241B4EBE8F004159AE /* EditConsumptionController.m in Sources */,
 				0073A7FE1B50122D008CD842 /* REPresenceValidator.m in Sources */,
 				0073A7FB1B50122D008CD842 /* REValidator.m in Sources */,
+				00C92ACF1B5DD51D003FF202 /* UtilData.m in Sources */,
 				0073A7E41B500D8E008CD842 /* RETableViewOptionsController.m in Sources */,
 				0073A7E11B500D8E008CD842 /* RETableViewItem.m in Sources */,
 				0073A7D51B500D8E008CD842 /* RECreditCardItem.m in Sources */,
