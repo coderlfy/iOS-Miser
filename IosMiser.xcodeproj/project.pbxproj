@@ -46,6 +46,12 @@
 		0073A7FC1B50122D008CD842 /* REEmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7F31B50122D008CD842 /* REEmailValidator.m */; };
 		0073A7FD1B50122D008CD842 /* RELengthValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7F51B50122D008CD842 /* RELengthValidator.m */; };
 		0073A7FE1B50122D008CD842 /* REPresenceValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7F71B50122D008CD842 /* REPresenceValidator.m */; };
+		007E7AE01B5F30C0006708DD /* UIView+YALConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 007E7ADC1B5F30C0006708DD /* UIView+YALConstraints.m */; };
+		007E7AE11B5F30C0006708DD /* YALContextMenuTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 007E7ADF1B5F30C0006708DD /* YALContextMenuTableView.m */; };
+		007E7AE41B5F3105006708DD /* YALNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 007E7AE31B5F3105006708DD /* YALNavigationBar.m */; };
+		007E7AE81B5F3A96006708DD /* ContextMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 007E7AE61B5F3A96006708DD /* ContextMenuCell.m */; };
+		007E7AE91B5F3A96006708DD /* ContextMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007E7AE71B5F3A96006708DD /* ContextMenuCell.xib */; };
+		007E7AEC1B5F5C70006708DD /* ContextMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007E7AEB1B5F5C70006708DD /* ContextMenuController.m */; };
 		00BE52591B54033200D6690E /* ConsumptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BE52581B54033200D6690E /* ConsumptionCell.xib */; };
 		00BE525C1B540F8F00D6690E /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BE525B1B540F8F00D6690E /* MainController.m */; };
 		00BE52601B54E9F200D6690E /* ConsumptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BE525F1B54E9F200D6690E /* ConsumptionCell.m */; };
@@ -144,6 +150,18 @@
 		0073A7F51B50122D008CD842 /* RELengthValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RELengthValidator.m; sourceTree = "<group>"; };
 		0073A7F61B50122D008CD842 /* REPresenceValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REPresenceValidator.h; sourceTree = "<group>"; };
 		0073A7F71B50122D008CD842 /* REPresenceValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REPresenceValidator.m; sourceTree = "<group>"; };
+		007E7ADB1B5F30C0006708DD /* UIView+YALConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YALConstraints.h"; sourceTree = "<group>"; };
+		007E7ADC1B5F30C0006708DD /* UIView+YALConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YALConstraints.m"; sourceTree = "<group>"; };
+		007E7ADD1B5F30C0006708DD /* YALContextMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALContextMenuCell.h; sourceTree = "<group>"; };
+		007E7ADE1B5F30C0006708DD /* YALContextMenuTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALContextMenuTableView.h; sourceTree = "<group>"; };
+		007E7ADF1B5F30C0006708DD /* YALContextMenuTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALContextMenuTableView.m; sourceTree = "<group>"; };
+		007E7AE21B5F3105006708DD /* YALNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALNavigationBar.h; sourceTree = "<group>"; };
+		007E7AE31B5F3105006708DD /* YALNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALNavigationBar.m; sourceTree = "<group>"; };
+		007E7AE51B5F3A96006708DD /* ContextMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContextMenuCell.h; path = ContextMenuCell/ContextMenuCell.h; sourceTree = "<group>"; };
+		007E7AE61B5F3A96006708DD /* ContextMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContextMenuCell.m; path = ContextMenuCell/ContextMenuCell.m; sourceTree = "<group>"; };
+		007E7AE71B5F3A96006708DD /* ContextMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContextMenuCell.xib; path = ContextMenuCell/ContextMenuCell.xib; sourceTree = "<group>"; };
+		007E7AEA1B5F5C64006708DD /* ContextMenuController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContextMenuController.h; sourceTree = "<group>"; };
+		007E7AEB1B5F5C70006708DD /* ContextMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextMenuController.m; sourceTree = "<group>"; };
 		00BE52581B54033200D6690E /* ConsumptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsumptionCell.xib; sourceTree = "<group>"; };
 		00BE525B1B540F8F00D6690E /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		00BE525D1B540FB500D6690E /* MainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
@@ -182,6 +200,7 @@
 		0054810F1B4EBE8F004159AE = {
 			isa = PBXGroup;
 			children = (
+				007E7ADA1B5F30C0006708DD /* YALContextMenu */,
 				0073A7961B500D8E008CD842 /* RETableViewManager */,
 				0054811A1B4EBE8F004159AE /* IosMiser */,
 				005481341B4EBE8F004159AE /* IosMiserTests */,
@@ -362,6 +381,18 @@
 			path = Validators;
 			sourceTree = "<group>";
 		};
+		007E7ADA1B5F30C0006708DD /* YALContextMenu */ = {
+			isa = PBXGroup;
+			children = (
+				007E7ADB1B5F30C0006708DD /* UIView+YALConstraints.h */,
+				007E7ADC1B5F30C0006708DD /* UIView+YALConstraints.m */,
+				007E7ADD1B5F30C0006708DD /* YALContextMenuCell.h */,
+				007E7ADE1B5F30C0006708DD /* YALContextMenuTableView.h */,
+				007E7ADF1B5F30C0006708DD /* YALContextMenuTableView.m */,
+			);
+			path = YALContextMenu;
+			sourceTree = "<group>";
+		};
 		00BE52561B54027300D6690E /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +405,9 @@
 		00BE52571B54028000D6690E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				007E7AE51B5F3A96006708DD /* ContextMenuCell.h */,
+				007E7AE61B5F3A96006708DD /* ContextMenuCell.m */,
+				007E7AE71B5F3A96006708DD /* ContextMenuCell.xib */,
 				00BE525E1B54E9E400D6690E /* ConsumptionCell.h */,
 				00BE525F1B54E9F200D6690E /* ConsumptionCell.m */,
 				00BE52581B54033200D6690E /* ConsumptionCell.xib */,
@@ -388,6 +422,8 @@
 				005481231B4EBE8F004159AE /* EditConsumptionController.m */,
 				00BE525D1B540FB500D6690E /* MainController.h */,
 				00BE525B1B540F8F00D6690E /* MainController.m */,
+				007E7AEA1B5F5C64006708DD /* ContextMenuController.h */,
+				007E7AEB1B5F5C70006708DD /* ContextMenuController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -395,6 +431,8 @@
 		00C92ACC1B5DD4DD003FF202 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				007E7AE21B5F3105006708DD /* YALNavigationBar.h */,
+				007E7AE31B5F3105006708DD /* YALNavigationBar.m */,
 				00C92ACD1B5DD504003FF202 /* UtilDate.h */,
 				00C92ACE1B5DD51D003FF202 /* UtilData.m */,
 			);
@@ -501,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0054812C1B4EBE8F004159AE /* LaunchScreen.xib in Resources */,
+				007E7AE91B5F3A96006708DD /* ContextMenuCell.xib in Resources */,
 				00BE52591B54033200D6690E /* ConsumptionCell.xib in Resources */,
 				0073A7E21B500D8E008CD842 /* RETableViewManager.bundle in Resources */,
 				005481291B4EBE8F004159AE /* Images.xcassets in Resources */,
@@ -536,6 +575,8 @@
 				0073A7F91B50122D008CD842 /* NSError+REValidation.m in Sources */,
 				0073A7DF1B500D8E008CD842 /* RETableViewCell.m in Sources */,
 				00BE52631B54EA3300D6690E /* ConsumptionModel.m in Sources */,
+				007E7AE11B5F30C0006708DD /* YALContextMenuTableView.m in Sources */,
+				007E7AEC1B5F5C70006708DD /* ContextMenuController.m in Sources */,
 				0073A7FD1B50122D008CD842 /* RELengthValidator.m in Sources */,
 				0073A7CE1B500D8E008CD842 /* RETableViewDateTimeCell.m in Sources */,
 				0073A7D81B500D8E008CD842 /* RELongTextItem.m in Sources */,
@@ -544,15 +585,18 @@
 				0073A7D91B500D8E008CD842 /* REMultipleChoiceItem.m in Sources */,
 				0073A7D01B500D8E008CD842 /* RETableViewLongTextCell.m in Sources */,
 				0073A7D71B500D8E008CD842 /* REFloatItem.m in Sources */,
+				007E7AE41B5F3105006708DD /* YALNavigationBar.m in Sources */,
 				0073A7CD1B500D8E008CD842 /* RETableViewCreditCardCell.m in Sources */,
 				0073A7DB1B500D8E008CD842 /* RERadioItem.m in Sources */,
 				00BE52601B54E9F200D6690E /* ConsumptionCell.m in Sources */,
+				007E7AE81B5F3A96006708DD /* ContextMenuCell.m in Sources */,
 				0073A7E31B500D8E008CD842 /* RETableViewManager.m in Sources */,
 				0073A7E51B500D8E008CD842 /* RETableViewSection.m in Sources */,
 				0073A7FC1B50122D008CD842 /* REEmailValidator.m in Sources */,
 				0073A7DE1B500D8E008CD842 /* REPlaceholderTextView.m in Sources */,
 				00CEDE661B566F7E00DB4DC7 /* BaseDB.m in Sources */,
 				005481211B4EBE8F004159AE /* AppDelegate.m in Sources */,
+				007E7AE01B5F30C0006708DD /* UIView+YALConstraints.m in Sources */,
 				0073A7DC1B500D8E008CD842 /* RETextItem.m in Sources */,
 				00BE525C1B540F8F00D6690E /* MainController.m in Sources */,
 				0073A7D41B500D8E008CD842 /* REBoolItem.m in Sources */,

@@ -10,12 +10,18 @@
 
 #import "EditConsumptionController.h"
 #import "TConsumption.h"
-#import  "ConsumptionCell.h"
+#import "ConsumptionCell.h"
+#import "ContextMenuController.h"
+#import "YALContextMenuTableView.h"
 
 @interface MainController ()
 
 @property (strong, readwrite, nonatomic) RETableViewSection *section;
 @property (strong, readwrite, nonatomic) NSMutableArray *consumptions;
+@property (strong, readwrite, nonatomic) ContextMenuController *contextMenuController;
+//@property (nonatomic, strong) YALContextMenuTableView* contextMenuTableView;
+//@property (nonatomic, strong) NSArray *menuTitles;
+//@property (nonatomic, strong) NSArray *menuIcons;
 
 @end
 
@@ -27,6 +33,8 @@
     self.title = @"守财奴";
     //设置导航条的样式（背景色／字体颜色等）
     [self setNavigationBarStyle];
+    //
+    [self initContextMenu];
     //添加导航条上的功能按钮
     [self addNavigationButtons];
     //加载主题内容
@@ -47,10 +55,41 @@
 }
 
 - (void)addNavigationButtons{
-    UIBarButtonItem *item=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+    UIBarButtonItem *rightitem=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                         target:self
                                                                         action:@selector(addAction)];
-    self.navigationItem.rightBarButtonItem=item;
+    
+    UIBarButtonItem *leftitem=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks
+                                                                        target:self
+                                                                            action:@selector(presentMenuButtonTapped:)];
+    self.navigationItem.rightBarButtonItem=leftitem;
+    self.navigationItem.leftBarButtonItem=rightitem;
+}
+
+-(void) initContextMenu{
+    if(self.contextMenuController == nil){
+        self.contextMenuController = [[ContextMenuController alloc] init];
+        [self.contextMenuController initiateMenuOptions];
+        
+    }
+    
+}
+
+- (void)presentMenuButtonTapped:(UIBarButtonItem *)sender {
+    // init YALContextMenuTableView tableView
+    if (!self.contextMenuController.contextMenuTableView) {
+        self.contextMenuController.contextMenuTableView = [[YALContextMenuTableView alloc]initWithTableViewDelegateDataSource:self.contextMenuController];
+        self.contextMenuController.contextMenuTableView.animationDuration = 0.15;
+        //optional - implement custom YALContextMenuTableView custom protocol
+        self.contextMenuController.contextMenuTableView.yalDelegate = self.contextMenuController;
+        
+        //register nib
+        UINib *cellNib = [UINib nibWithNibName:@"ContextMenuCell" bundle:nil];
+        [self.contextMenuController.contextMenuTableView registerNib:cellNib forCellReuseIdentifier:@"rotationCell"];
+    }
+    
+    // it is better to use this method only for proper animation
+    [self.contextMenuController.contextMenuTableView showInView:self.navigationController.view withEdgeInsets:UIEdgeInsetsZero animated:YES];
 }
 
 - (void)loadContent{
@@ -69,7 +108,7 @@
 - (void)loadStaticDataForSection {
     
     for (NSInteger i = 1; i < 100; i++) {
-        NSString *title = [NSString stringWithFormat:@"Item %i", i];
+        NSString *title = [NSString stringWithFormat:@"Item %li", (long)i];
         ConsumptionModel *item = [ConsumptionModel itemWithTitle:title
                                                    accessoryType:UITableViewCellAccessoryDisclosureIndicator
                                                 selectionHandler:^(RETableViewItem *item) {
@@ -122,6 +161,9 @@
 }
 
 - (void)addAction{
+    if(self.contextMenuController != nil){
+       [self.contextMenuController.contextMenuTableView hideContextMenu];
+    }
     __typeof (&*self) __weak weakSelf = self;
     
     EditConsumptionController *addcontroller =[[EditConsumptionController alloc] initByAddUI];
