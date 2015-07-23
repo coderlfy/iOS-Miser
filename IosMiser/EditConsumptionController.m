@@ -46,7 +46,6 @@
     
     [self assignToControl];
 }
-
 - (void)assignToControl{
     if(!self.isAdd){
         self.ltiTitle.value = self.consumption.title;
@@ -55,9 +54,7 @@
         self.niMoney.value = [NSString stringWithFormat:@"%i", [self.consumption.money intValue]];
     }
 }
-
-- (RETableViewSection *)addBasicControls
-{
+- (RETableViewSection *)addBasicControls{
     self.section = [RETableViewSection sectionWithHeaderTitle:@"账目项目"];
     [_manager addSection:self.section];
     
@@ -70,7 +67,6 @@
     
     return self.section;
 }
-
 -(void)addTitle{
     self.ltiTitle = [RELongTextItem itemWithValue:nil
                                       placeholder:@"这里输入内容（必填项）"];
@@ -78,35 +74,40 @@
     [self.section addItem:self.ltiTitle];
 }
 -(void)addIsConsumption{
-    __typeof (&*self) __weak weakSelf = self;
     self.riIsConsumption = [RERadioItem itemWithTitle:@"产生费用方式："
                                                 value:@"支出"
-                                     selectionHandler:^(RERadioItem *item) {
-                                         [item deselectRowAnimated:YES];
-                                         
-                                         NSMutableArray *options = [[NSMutableArray alloc] init];
-                                         
-                                         [options addObject:@"支出"];
-                                         [options addObject:@"收入"];
-                                         
-                                         RETableViewOptionsController *optionsController = [[RETableViewOptionsController alloc] initWithItem:item
-                                                                                                                                      options:options
-                                                                                                                               multipleChoice:NO
-                                                                                                                            completionHandler:^{
-                                                                                                                                [weakSelf.navigationController popViewControllerAnimated:YES];
-                                                                                                                                
-                                                                                                                                [item reloadRowWithAnimation:UITableViewRowAnimationNone];
-                                                                                                                            }];
-                                         
-                                         optionsController.delegate = weakSelf;
-                                         optionsController.style = self.section.style;
-                                         if (weakSelf.tableView.backgroundView == nil) {
-                                             optionsController.tableView.backgroundColor = weakSelf.tableView.backgroundColor;
-                                             optionsController.tableView.backgroundView = nil;
-                                         }
-                                         [weakSelf.navigationController pushViewController:optionsController animated:YES];
-                                     }];
+                                     selectionHandler:[self viewConsumpionMode]];
     [self.section addItem:self.riIsConsumption];
+}
+-(void(^)(RERadioItem *))viewConsumpionMode{
+    __typeof (&*self) __weak weakSelf = self;
+    return ^(RERadioItem *item){
+        
+        [item deselectRowAnimated:YES];
+        
+        NSMutableArray *options = [[NSMutableArray alloc] init];
+        
+        [options addObject:@"支出"];
+        [options addObject:@"收入"];
+        
+        RETableViewOptionsController *optionsController =
+        [[RETableViewOptionsController alloc] initWithItem:item
+                                                   options:options
+                                            multipleChoice:NO
+                                         completionHandler:^{
+                                             [weakSelf.navigationController popViewControllerAnimated:YES];
+                                             [item reloadRowWithAnimation:UITableViewRowAnimationNone];
+                                         }];
+        
+        optionsController.delegate = weakSelf;
+        optionsController.style = self.section.style;
+        if (weakSelf.tableView.backgroundView == nil) {
+            optionsController.tableView.backgroundColor = weakSelf.tableView.backgroundColor;
+            optionsController.tableView.backgroundView = nil;
+        }
+        [weakSelf.navigationController pushViewController:optionsController animated:YES];
+        
+    };
 }
 -(void)addStartDate{
     self.dtiStartTime = [REDateTimeItem itemWithTitle:@"发生时刻："
@@ -131,37 +132,49 @@
                          }];
     [self.section addItem:self.biCalculated];
 }
-
-
-
-- (RETableViewSection *)addButton
-{
-    __typeof (&*self) __weak weakSelf = self;
-    
+- (RETableViewSection *)addButton{
     RETableViewSection *section = [RETableViewSection section];
     [_manager addSection:section];
     
     RETableViewItem *buttonItem = [RETableViewItem itemWithTitle:@"保存"
                                                    accessoryType:UITableViewCellAccessoryNone
-                                                selectionHandler:^(RETableViewItem *item) {
-                                                    [weakSelf.tableView deselectRowAtIndexPath:item.indexPath animated:YES];
-                                                    NSLog(@"longTextItem ＝ %@", self.ltiTitle.value);
-                                                    
-                                                    ConsumptionModel *consumption = (self.consumption==nil)?[[ConsumptionModel alloc]init]:self.consumption;
-                                                    consumption.title = self.ltiTitle.value;
-                                                    consumption.isConsumption = [self.riIsConsumption.value  isEqual: @"支出"];
-                                                    consumption.money = [NSNumber numberWithInt:[self.niMoney.value intValue]];
-                                                    consumption.startDate = [UtilDate stringFromDate:self.dtiStartTime.value];
-                                                    self.block(consumption,self.isAdd);
-                                                    
-                                                    [weakSelf.navigationController popViewControllerAnimated:YES];
-                                                }];
+                                                selectionHandler:[self saveAction]];
     buttonItem.textAlignment = NSTextAlignmentCenter;
     [section addItem:buttonItem];
     
     return section;
 }
-
+-(void(^)(RETableViewItem *))saveAction{
+    __typeof (&*self) __weak weakSelf = self;
+    return ^(RETableViewItem *item){
+        [weakSelf.tableView deselectRowAtIndexPath:item.indexPath animated:YES];
+        NSLog(@"longTextItem ＝ %@", self.ltiTitle.value);
+        if(self.ltiTitle.value == nil ||
+           [self.ltiTitle.value isEqualToString:@""]){
+            [self showAlert:@"账目描述不可为空！"];
+            return;
+        }
+        
+        ConsumptionModel *consumption = (self.consumption==nil)?
+                                        [[ConsumptionModel alloc]init]:
+                                        self.consumption;
+        consumption.title = self.ltiTitle.value;
+        consumption.isConsumption = [self.riIsConsumption.value  isEqual: @"支出"];
+        consumption.money = [NSNumber numberWithInt:[self.niMoney.value intValue]];
+        consumption.startDate = [UtilDate stringFromDate:self.dtiStartTime.value];
+        self.block(consumption,self.isAdd);
+        
+        [weakSelf.navigationController popViewControllerAnimated:YES];
+    };
+}
+-(void)showAlert:(NSString*) message{
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"系统提醒"
+                                                 message:message
+                                                delegate:nil
+                                       cancelButtonTitle:@"确定"
+                                       otherButtonTitles:nil, nil];
+    [av show];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
