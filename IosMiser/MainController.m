@@ -124,7 +124,7 @@
 }
 
 - (void)loadDataForSection {
-    __typeof (&*self) __weak weakSelf = self;
+    
     TConsumption *db = [[TConsumption alloc] init];
     
     [db creatTableWithDataBaseName];
@@ -137,27 +137,33 @@
      
     self.consumptions = [db findAllConsumption];
     for (ConsumptionModel *u in self.consumptions) {
-        u.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        u.cellHeight = 60;
-        u.editingStyle = UITableViewCellEditingStyleDelete;
-        u.deletionHandler = ^(RETableViewItem *item) {
-            ConsumptionModel *currentModel = (ConsumptionModel *)item;
-            [self.consumptions removeObject:currentModel];
-            [[TConsumption shareConsumption] deleteConsumption:currentModel];
-        };
-        u.selectionHandler = ^(RETableViewItem *item) {
-            ConsumptionModel *currentModel = (ConsumptionModel *)item;
-
-            EditConsumptionController *addcontroller = [[EditConsumptionController alloc] initByUpdateUI:currentModel];
-            addcontroller.block = ^(ConsumptionModel *model, BOOL isAdd){
-                TConsumption *db=[[TConsumption alloc] init];
-                [db updateConsumption:model];
-                [weakSelf.tableView reloadData];
-            };
-            [self.navigationController pushViewController:addcontroller animated:YES];        };
-
+        
+        [self assignAttribute:u];
         [self.section addItem:u];
     }
+}
+
+-(void) assignAttribute:(ConsumptionModel*)u{
+    __typeof (&*self) __weak weakSelf = self;
+    u.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    u.cellHeight = 60;
+    u.editingStyle = UITableViewCellEditingStyleDelete;
+    u.deletionHandler = ^(RETableViewItem *item) {
+        ConsumptionModel *currentModel = (ConsumptionModel *)item;
+        [self.consumptions removeObject:currentModel];
+        [[TConsumption shareConsumption] deleteConsumption:currentModel];
+    };
+    u.selectionHandler = ^(RETableViewItem *item) {
+        ConsumptionModel *currentModel = (ConsumptionModel *)item;
+        
+        EditConsumptionController *addcontroller = [[EditConsumptionController alloc] initByUpdateUI:currentModel];
+        addcontroller.block = ^(ConsumptionModel *model, BOOL isAdd){
+            TConsumption *db=[[TConsumption alloc] init];
+            [db updateConsumption:model];
+            [weakSelf.manager.tableView reloadData];
+        };
+        [self.navigationController pushViewController:addcontroller animated:YES];
+    };
 }
 
 - (void)addAction{
@@ -169,14 +175,13 @@
     EditConsumptionController *addcontroller =[[EditConsumptionController alloc] initByAddUI];
     addcontroller.block = ^(ConsumptionModel *model, BOOL isAdd){
         TConsumption *db=[[TConsumption alloc] init];
-        [db addConsumption:model];
+        int insertedid = [db addConsumption:model];
+        model.ID = [NSNumber numberWithInt:insertedid];
         
-        model.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        model.cellHeight = 60;
-        [weakSelf.section addItem:model];
-        [weakSelf.tableView reloadData];
-        
-        [self.consumptions addObject:model];
+        [self assignAttribute:model];
+        [self.section insertItem:model atIndex:0];
+        [self.consumptions insertObject:model atIndex:0];
+        [weakSelf.manager.tableView reloadData];
     };
     [self.navigationController pushViewController:addcontroller animated:YES];
 }
@@ -204,5 +209,10 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     ConsumptionCell *ccCell = (ConsumptionCell *)cell;
     ConsumptionModel *currentModel = self.consumptions[indexPath.row];
     ccCell.money.textColor = [self getMoneyColorWithIsConsumption:currentModel.isConsumption];
+}
+
+-(NSString *)tableView:(UITableView *)tableView
+titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"删除";
 }
 @end

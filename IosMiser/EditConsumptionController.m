@@ -48,11 +48,12 @@
 }
 
 - (void)assignToControl{
-    self.ltiTitle.value = self.consumption.title;
-    self.dtiStartTime.value = [UtilDate dateFromString:self.consumption.startDate];
-    self.riIsConsumption.value = self.consumption.isConsumption?@"支出":@"收入";
-    self.niMoney.value = [NSString stringWithFormat:@"%i", [self.consumption.money intValue]];
-    
+    if(!self.isAdd){
+        self.ltiTitle.value = self.consumption.title;
+        self.dtiStartTime.value = [UtilDate dateFromString:self.consumption.startDate];
+        self.riIsConsumption.value = self.consumption.isConsumption?@"支出":@"收入";
+        self.niMoney.value = [NSString stringWithFormat:@"%i", [self.consumption.money intValue]];
+    }
 }
 
 - (RETableViewSection *)addBasicControls
@@ -72,7 +73,7 @@
 
 -(void)addTitle{
     self.ltiTitle = [RELongTextItem itemWithValue:nil
-                                      placeholder:@"这里输入内容"];
+                                      placeholder:@"这里输入内容（必填项）"];
     self.ltiTitle.cellHeight = 88;
     [self.section addItem:self.ltiTitle];
 }

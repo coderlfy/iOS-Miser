@@ -27,18 +27,10 @@ static NSString *const menuCellIdentifier = @"rotationCell";
 
 - (void)initiateMenuOptions {
     self.menuTitles = @[@"",
-                        @"",
-                        @"",
-                        @"",
-                        @"",
                         @""];
     
     self.menuIcons = @[[UIImage imageNamed:@"Icnclose"],
-                       [UIImage imageNamed:@"SendMessageIcn"],
-                       [UIImage imageNamed:@"LikeIcn"],
-                       [UIImage imageNamed:@"AddToFriendsIcn"],
-                       [UIImage imageNamed:@"AddToFavouritesIcn"],
-                       [UIImage imageNamed:@"BlockUserIcn"]];
+                       [UIImage imageNamed:@"rectChart"]];
 }
 
 #pragma mark - YALContextMenuTableViewDelegate

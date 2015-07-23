@@ -14,48 +14,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="费用事项" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UM8-Tf-N7Q">
-                        <rect key="frame" x="14" y="8" width="148" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="费用事项" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UM8-Tf-N7Q">
+                        <rect key="frame" x="14" y="8" width="184" height="34"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="发生时刻" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWV-9v-GgW">
-                        <rect key="frame" x="14" y="50" width="148" height="17"/>
+                        <rect key="frame" x="14" y="50" width="184" height="17"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="148" id="HuV-Bc-e4I"/>
+                            <constraint firstAttribute="width" constant="184" id="HuV-Bc-e4I"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金额" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO4-qH-Vzf">
-                        <rect key="frame" x="182" y="28" width="128" height="21"/>
+                        <rect key="frame" x="206" y="28" width="104" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="CWV-9v-GgW" secondAttribute="bottom" constant="5" id="0fc-60-QX9"/>
-                    <constraint firstItem="cO4-qH-Vzf" firstAttribute="leading" secondItem="UM8-Tf-N7Q" secondAttribute="trailing" constant="20" id="5D3-bT-Gsh"/>
+                    <constraint firstItem="cO4-qH-Vzf" firstAttribute="leading" secondItem="UM8-Tf-N7Q" secondAttribute="trailing" constant="8" id="5D3-bT-Gsh"/>
                     <constraint firstItem="UM8-Tf-N7Q" firstAttribute="top" secondItem="baT-M5-mxI" secondAttribute="topMargin" id="BiR-Y0-txP"/>
-                    <constraint firstAttribute="trailing" secondItem="cO4-qH-Vzf" secondAttribute="trailing" id="Ful-21-zBc"/>
                     <constraint firstAttribute="centerY" secondItem="cO4-qH-Vzf" secondAttribute="centerY" constant="-1" id="ISq-2J-Sdr"/>
                     <constraint firstItem="CWV-9v-GgW" firstAttribute="trailing" secondItem="UM8-Tf-N7Q" secondAttribute="trailing" id="KYn-iQ-KT1"/>
                     <constraint firstItem="CWV-9v-GgW" firstAttribute="leading" secondItem="UM8-Tf-N7Q" secondAttribute="leading" id="V1R-zo-Gk5"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="cO4-qH-Vzf" secondAttribute="trailing" id="bNX-5e-lEV"/>
                     <constraint firstAttribute="bottomMargin" secondItem="CWV-9v-GgW" secondAttribute="bottom" id="eHI-Wi-Efu"/>
                     <constraint firstAttribute="trailingMargin" secondItem="cO4-qH-Vzf" secondAttribute="trailing" constant="2" id="iDw-37-Fvk"/>
                     <constraint firstItem="CWV-9v-GgW" firstAttribute="leading" secondItem="baT-M5-mxI" secondAttribute="leadingMargin" constant="6" id="jIq-cz-jR8"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="0fc-60-QX9"/>
-                        <exclude reference="Ful-21-zBc"/>
-                        <exclude reference="bNX-5e-lEV"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="describe" destination="UM8-Tf-N7Q" id="egD-XF-de7"/>

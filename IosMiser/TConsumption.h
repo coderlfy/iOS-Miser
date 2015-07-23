@@ -17,7 +17,7 @@
 
 -(void)creatTableWithDataBaseName;
 
--(BOOL)addConsumption:(ConsumptionModel*)consumptionModel;
+-(int)addConsumption:(ConsumptionModel*)consumptionModel;
 
 -(BOOL)addConsumptionByExample:(ConsumptionModel*)consumptionModel;
 

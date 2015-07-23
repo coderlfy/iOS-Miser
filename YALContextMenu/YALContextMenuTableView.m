@@ -151,7 +151,8 @@ typedef NS_ENUM(NSUInteger, AnimatingState) {
 - (void)updateAlongsideRotation {
     if (self.animatingState == Hiding) {
         if ([self.yalDelegate respondsToSelector:@selector(contextMenuTableView:didDismissWithIndexPath:)]) {
-            [self.yalDelegate contextMenuTableView:self didDismissWithIndexPath:[self indexPathForCell:self.selectedCell]];
+            [self.yalDelegate contextMenuTableView:self
+                           didDismissWithIndexPath:[self indexPathForCell:self.selectedCell]];
         }
         [self removeFromSuperview];
     } else if (self.animatingState == Showing) {

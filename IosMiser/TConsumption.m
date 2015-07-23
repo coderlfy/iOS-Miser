@@ -28,27 +28,39 @@ static NSString *tableName = @"tconsumption";
                      @"isConsumption",
                      @"money",
                      @"startDate"];
-
+    
     [self createTable:sql dataBaseName:dbName];
 }
 
 
 
--(BOOL)addConsumption:(ConsumptionModel*)consumptionModel {
+-(int)addConsumption:(ConsumptionModel*)consumptionModel {
     NSString *sql = [NSString stringWithFormat:@"insert into %@ (title,isConsumption,money,startDate) values (?,?,?,?)",
                      tableName];
-//    NSNumber *isconsumption = [NSNumber numberWithInt:consumptionModel.isConsumption];
+    //    NSNumber *isconsumption = [NSNumber numberWithInt:consumptionModel.isConsumption];
     NSArray *params = @[consumptionModel.title,
-                      consumptionModel.isConsumption?@"1":@"0",
-                      [NSString stringWithFormat:@"%i", [consumptionModel.money intValue]],
-                      consumptionModel.startDate];
-    return  [self execSql:sql parmas:params dataBaseName:dbName];
+                        consumptionModel.isConsumption?@"1":@"0",
+                        [NSString stringWithFormat:@"%i", [consumptionModel.money intValue]],
+                        consumptionModel.startDate];
+    BOOL issuccess = [self execSql:sql parmas:params dataBaseName:dbName];
+    NSString *sql_insertid = [NSString stringWithFormat:@"select max(ID) as insertNewID from %@",
+                              tableName];
+    
+    int insertid = 0;
+    if(issuccess){
+        NSArray *result = [self selectSql:sql_insertid parmas:nil dataBaseName:dbName];
+        for (NSDictionary *dic in result) {
+            NSNumber *newid = [dic objectForKey:@"insertNewID"];
+            insertid = [newid intValue];
+        }
+    }
+    return insertid;
 }
 
 -(BOOL)addConsumptionByExample:(ConsumptionModel*)consumptionModel {
     NSString *sql = [NSString stringWithFormat:@"insert into %@ (ID, title,isConsumption,money,startDate) values (1,?,?,?,?)",
                      tableName];
-//    NSNumber *isconsumption = [NSNumber numberWithInt:consumptionModel.isConsumption];
+    //    NSNumber *isconsumption = [NSNumber numberWithInt:consumptionModel.isConsumption];
     NSArray *params = @[consumptionModel.title,
                         consumptionModel.isConsumption ? @"1" : @"0",
                         [NSString stringWithFormat:@"%i", [consumptionModel.money intValue]],
@@ -68,7 +80,7 @@ static NSString *tableName = @"tconsumption";
 }
 
 -(NSMutableArray*)findAllConsumption {
-    NSString *sql = [NSString stringWithFormat:@"select ID,title,isConsumption,money,startDate from %@", tableName];
+    NSString *sql = [NSString stringWithFormat:@"select ID,title,isConsumption,money,startDate from %@ order by startDate desc", tableName];
     NSArray *result = [self selectSql:sql parmas:nil dataBaseName:dbName];
     NSMutableArray *consumptions=[NSMutableArray array];
     for (NSDictionary *dic in result) {
