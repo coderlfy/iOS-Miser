@@ -19,16 +19,12 @@
 @property (strong, readwrite, nonatomic) RETableViewSection *section;
 @property (strong, readwrite, nonatomic) NSMutableArray *consumptions;
 @property (strong, readwrite, nonatomic) ContextMenuController *contextMenuController;
-//@property (nonatomic, strong) YALContextMenuTableView* contextMenuTableView;
-//@property (nonatomic, strong) NSArray *menuTitles;
-//@property (nonatomic, strong) NSArray *menuIcons;
 
 @end
 
 @implementation MainController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     self.title = @"守财奴";
     //设置导航条的样式（背景色／字体颜色等）
@@ -40,7 +36,6 @@
     //加载主题内容
     [self loadContent];
 }
-
 - (void)setNavigationBarStyle{
     self.navigationController.navigationBar.barTintColor = [ UIColor colorWithRed: 30.0f/255.0f
                                                                             green: 144.0/255.0f
@@ -53,7 +48,6 @@
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 }
-
 - (void)addNavigationButtons{
     UIBarButtonItem *rightitem=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                         target:self
@@ -65,16 +59,13 @@
     self.navigationItem.rightBarButtonItem=leftitem;
     self.navigationItem.leftBarButtonItem=rightitem;
 }
-
 -(void) initContextMenu{
     if(self.contextMenuController == nil){
         self.contextMenuController = [[ContextMenuController alloc] init];
         [self.contextMenuController initiateMenuOptions];
         
     }
-    
 }
-
 - (void)presentMenuButtonTapped:(UIBarButtonItem *)sender {
     // init YALContextMenuTableView tableView
     if (!self.contextMenuController.contextMenuTableView) {
@@ -91,7 +82,6 @@
     // it is better to use this method only for proper animation
     [self.contextMenuController.contextMenuTableView showInView:self.navigationController.view withEdgeInsets:UIEdgeInsetsZero animated:YES];
 }
-
 - (void)loadContent{
     _manager = [[RETableViewManager alloc] initWithTableView:self.tableView delegate:self];
     _manager[@"ConsumptionModel"] = @"ConsumptionCell";
@@ -104,7 +94,6 @@
         
     }
 }
-
 - (void)loadStaticDataForSection {
     
     for (NSInteger i = 1; i < 100; i++) {
@@ -122,7 +111,6 @@
         [self.section addItem:item];
     }
 }
-
 - (void)loadDataForSection {
     
     TConsumption *db = [[TConsumption alloc] init];
@@ -142,7 +130,6 @@
         [self.section addItem:u];
     }
 }
-
 -(void) assignAttribute:(ConsumptionModel*)u{
     __typeof (&*self) __weak weakSelf = self;
     u.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -165,7 +152,6 @@
         [self.navigationController pushViewController:addcontroller animated:YES];
     };
 }
-
 - (void)addAction{
     if(self.contextMenuController != nil){
        [self.contextMenuController.contextMenuTableView hideContextMenu];
@@ -185,9 +171,7 @@
     };
     [self.navigationController pushViewController:addcontroller animated:YES];
 }
-
 - (UIColor *) getMoneyColorWithIsConsumption:(BOOL)isConsumption {
-    
     UIColor *myColorHue = isConsumption?
     [ UIColor colorWithRed: 227.0f/255.0f
                      green: 23.0/255.0f
@@ -201,16 +185,13 @@
      ];
     return myColorHue;
 }
-
 - (void)tableView:(UITableView *)tableView
   willDisplayCell:(UITableViewCell *)cell
-forRowAtIndexPath:(NSIndexPath *)indexPath
-{
+forRowAtIndexPath:(NSIndexPath *)indexPath {
     ConsumptionCell *ccCell = (ConsumptionCell *)cell;
     ConsumptionModel *currentModel = self.consumptions[indexPath.row];
     ccCell.money.textColor = [self getMoneyColorWithIsConsumption:currentModel.isConsumption];
 }
-
 -(NSString *)tableView:(UITableView *)tableView
 titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     return @"删除";
