@@ -35,7 +35,7 @@
     self.consumption = consumption;
     return self;
 }
-- (void)viewDidLoad {
+- (void) viewDidLoad {
     [super viewDidLoad];
     self.title = @"记账";
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
@@ -46,7 +46,7 @@
     
     [self assignToControl];
 }
-- (void)assignToControl{
+- (void) assignToControl{
     if(!self.isAdd){
         self.ltiTitle.value = self.consumption.title;
         self.dtiStartTime.value = [UtilDate dateFromString:self.consumption.startDate];
@@ -67,19 +67,19 @@
     
     return self.section;
 }
--(void)addTitle{
+- (void) addTitle{
     self.ltiTitle = [RELongTextItem itemWithValue:nil
                                       placeholder:@"这里输入内容（必填项）"];
     self.ltiTitle.cellHeight = 88;
     [self.section addItem:self.ltiTitle];
 }
--(void)addIsConsumption{
+- (void) addIsConsumption{
     self.riIsConsumption = [RERadioItem itemWithTitle:@"产生费用方式："
                                                 value:@"支出"
                                      selectionHandler:[self viewConsumpionMode]];
     [self.section addItem:self.riIsConsumption];
 }
--(void(^)(RERadioItem *))viewConsumpionMode{
+- (void(^)(RERadioItem *)) viewConsumpionMode{
     __typeof (&*self) __weak weakSelf = self;
     return ^(RERadioItem *item){
         
@@ -109,7 +109,7 @@
         
     };
 }
--(void)addStartDate{
+- (void) addStartDate{
     self.dtiStartTime = [REDateTimeItem itemWithTitle:@"发生时刻："
                                                 value:[NSDate date]
                                           placeholder:nil
@@ -117,14 +117,14 @@
                                        datePickerMode:UIDatePickerModeDateAndTime];
     [self.section addItem:self.dtiStartTime];
 }
--(void)addMoney{
+- (void) addMoney{
     self.niMoney = [RENumberItem itemWithTitle:@"金额："
                                          value:@""
                                    placeholder:@"￥0"
                                         format:@"￥XXXXXXX"];
     [self.section addItem:self.niMoney];
 }
--(void)addIsCalculated{
+- (void) addIsCalculated{
     self.biCalculated = [REBoolItem itemWithTitle:@"是否入账："
                                             value:YES
                          switchValueChangeHandler:^(REBoolItem *item) {
@@ -132,7 +132,7 @@
                          }];
     [self.section addItem:self.biCalculated];
 }
-- (RETableViewSection *)addButton{
+- (RETableViewSection *) addButton{
     RETableViewSection *section = [RETableViewSection section];
     [_manager addSection:section];
     
@@ -144,7 +144,7 @@
     
     return section;
 }
--(void(^)(RETableViewItem *))saveAction{
+- (void(^)(RETableViewItem *)) saveAction{
     __typeof (&*self) __weak weakSelf = self;
     return ^(RETableViewItem *item){
         [weakSelf.tableView deselectRowAtIndexPath:item.indexPath animated:YES];
@@ -164,10 +164,10 @@
         consumption.startDate = [UtilDate stringFromDate:self.dtiStartTime.value];
         self.block(consumption,self.isAdd);
         
-        [weakSelf.navigationController popViewControllerAnimated:YES];
+        [weakSelf.navigationController popViewControllerAnimated:NO];
     };
 }
--(void)showAlert:(NSString*) message{
+- (void) showAlert:(NSString*) message{
     UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"系统提醒"
                                                  message:message
                                                 delegate:nil
@@ -175,7 +175,7 @@
                                        otherButtonTitles:nil, nil];
     [av show];
 }
-- (void)didReceiveMemoryWarning {
+- (void) didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

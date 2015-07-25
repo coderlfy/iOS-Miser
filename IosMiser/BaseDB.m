@@ -33,7 +33,7 @@
     sqlite3_stmt *stmt=nil;
     //打开数据库
     NSString *fileName=[self DataBaseName:dataName];
-    NSLog(@"%@",fileName);
+    //NSLog(@"%@",fileName);
     
     int result= sqlite3_open([fileName UTF8String], &sqlite);
     if (result!=SQLITE_OK) {
@@ -74,7 +74,7 @@
     sqlite3_finalize(stmt);
     //关闭数据库
     sqlite3_close(sqlite);
-    NSLog(@"查询完！");
+    //NSLog(@"查询完！");
     return  resultData;
 }
 /**
@@ -118,7 +118,7 @@
     sqlite3_finalize(stmt);
     //关闭数据库
     sqlite3_close(sqlite);
-    NSLog(@"执行成功！");
+    //NSLog(@"执行成功！");
     return YES;
 }
 
