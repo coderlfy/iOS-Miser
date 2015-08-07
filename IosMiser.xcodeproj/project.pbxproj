@@ -46,6 +46,7 @@
 		0073A7FC1B50122D008CD842 /* REEmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7F31B50122D008CD842 /* REEmailValidator.m */; };
 		0073A7FD1B50122D008CD842 /* RELengthValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7F51B50122D008CD842 /* RELengthValidator.m */; };
 		0073A7FE1B50122D008CD842 /* REPresenceValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A7F71B50122D008CD842 /* REPresenceValidator.m */; };
+		007DAC1D1B746D58002B676A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 007DAC1F1B746D58002B676A /* InfoPlist.strings */; };
 		007E7AE01B5F30C0006708DD /* UIView+YALConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 007E7ADC1B5F30C0006708DD /* UIView+YALConstraints.m */; };
 		007E7AE11B5F30C0006708DD /* YALContextMenuTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 007E7ADF1B5F30C0006708DD /* YALContextMenuTableView.m */; };
 		007E7AE41B5F3105006708DD /* YALNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 007E7AE31B5F3105006708DD /* YALNavigationBar.m */; };
@@ -150,6 +151,9 @@
 		0073A7F51B50122D008CD842 /* RELengthValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RELengthValidator.m; sourceTree = "<group>"; };
 		0073A7F61B50122D008CD842 /* REPresenceValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REPresenceValidator.h; sourceTree = "<group>"; };
 		0073A7F71B50122D008CD842 /* REPresenceValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REPresenceValidator.m; sourceTree = "<group>"; };
+		007DAC1A1B746D09002B676A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		007DAC1E1B746D58002B676A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		007DAC201B746D5C002B676A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		007E7ADB1B5F30C0006708DD /* UIView+YALConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YALConstraints.h"; sourceTree = "<group>"; };
 		007E7ADC1B5F30C0006708DD /* UIView+YALConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YALConstraints.m"; sourceTree = "<group>"; };
 		007E7ADD1B5F30C0006708DD /* YALContextMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALContextMenuCell.h; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 			children = (
 				0054811C1B4EBE8F004159AE /* Info.plist */,
 				0054811D1B4EBE8F004159AE /* main.m */,
+				007DAC1F1B746D58002B676A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -540,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0054812C1B4EBE8F004159AE /* LaunchScreen.xib in Resources */,
+				007DAC1D1B746D58002B676A /* InfoPlist.strings in Resources */,
 				007E7AE91B5F3A96006708DD /* ContextMenuCell.xib in Resources */,
 				00BE52591B54033200D6690E /* ConsumptionCell.xib in Resources */,
 				0073A7E21B500D8E008CD842 /* RETableViewManager.bundle in Resources */,
@@ -633,8 +639,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				0054812B1B4EBE8F004159AE /* Base */,
+				007DAC1A1B746D09002B676A /* zh-Hans */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		007DAC1F1B746D58002B676A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				007DAC1E1B746D58002B676A /* zh-Hans */,
+				007DAC201B746D5C002B676A /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

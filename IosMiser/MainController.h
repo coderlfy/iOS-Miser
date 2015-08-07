@@ -13,7 +13,7 @@
 #import "ConsumptionModel.h"
 
 
-@interface MainController : UITableViewController <RETableViewManagerDelegate>
+@interface MainController : UITableViewController <RETableViewManagerDelegate, UIAlertViewDelegate>
 
 @property (strong, readonly, nonatomic) RETableViewManager *manager;
 

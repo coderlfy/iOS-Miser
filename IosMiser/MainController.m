@@ -203,6 +203,7 @@
                                                delegate:self
                                       cancelButtonTitle:nil
                                       otherButtonTitles:nil, nil];
+    //self.alertView
     [self.alertView show];
     
     UIActivityIndicatorView *aiv = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -221,6 +222,12 @@
      }];
      */
     
+}
+-(void)willPresentAlertView:(UIAlertView *)alertView{
+    //if (alertView.tag==2012) {
+        [alertView setFrame:CGRectMake(0, 40, 300, 200)];
+        [alertView setBounds:CGRectMake( 0, -120, 300, 200 )];
+    //}
 }
 - (void) hideIndicatorAlert{
     [self.alertView dismissWithClickedButtonIndex:0 animated:NO];
